@@ -1,10 +1,9 @@
-<tool id="ctb_alignit" name="Pharmacophore Alignment" version="0.1">
+<tool id="ctb_alignit" name="Pharmacophore Alignment" version="1.0.3">
     <description>and Optimization (Align-it)</description>
     <requirements>
-        <requirement type="package" version="1.0.1">silicos_it</requirement>
-        <requirement type="package" version="2.3.2">openbabel</requirement>
+        <requirement type="package" version="1.0.3">align_it</requirement>
     </requirements>
-    <command>
+    <command detect_errors="aggressive">
 <![CDATA[
         align-it
             #if str($database.ext).strip() == 'phar':
@@ -51,8 +50,6 @@
             $noHybrid
             $scoreOnly
             $withExclusion
-
-            2>&1
 ]]>
     </command>
     <inputs>
@@ -133,7 +130,7 @@ The first functionality is the generation of pharmacophores from molecules
 Secondly, pairs of pharmacophores can be aligned (the function of this tool). The resulting
 score is calculated from the volume overlap resulting of the alignments.
 
-.. _Align-it: http://www.silicos-it.com/software/align-it/1.0.3/align-it.html
+.. _Align-it: http://silicos-it.be.s3-website-eu-west-1.amazonaws.com/software/align-it/1.0.4/align-it.html
 
 -----
 
